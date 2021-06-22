@@ -1,9 +1,29 @@
-- npm install -g gulp-cli
-- npm install --save-dev gulp
-- npm install gulp-clean-css --save-dev
-- npm install --save-dev gulp-concat
-- npm i purgecss -D
-- npm install --save-dev gulp-purgecss
-- npm install --save-dev gulp-imagemin
+# Overview
 
-- gulp hello
+This repo contains a starter kit for
+
+- gulp
+- clean css
+- purgecss
+- concat
+- imagemin
+
+# Run in watch
+
+```bash
+
+gulp watch
+
+```
+
+# Run default
+
+```bash
+
+gulp
+
+```
+
+# Prerequesites
+
+- npm install -g gulp-cli

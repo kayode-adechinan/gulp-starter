@@ -39,14 +39,7 @@ gulp.task("minify-image", () => {
 
 // gulp minify-image
 
-//gulp.task("default", gulp.series("minify-css", "minify-image"));
-
-/*gulp.task("default", gulp.series("minify-css", "minify-image"), () => {
-  gulp.watch("src/*", () => {
-    gulp.run("minify-css");
-    gulp.run("minify-image");
-  });
-})*/
+gulp.task("default", gulp.series("minify-css", "minify-image"));
 
 gulp.task("watch", function () {
   gulp.watch("src/", gulp.series("minify-css", "minify-image"));
