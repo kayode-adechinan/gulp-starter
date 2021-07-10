@@ -3,8 +3,7 @@ const cleanCSS = require("gulp-clean-css");
 const concat = require("gulp-concat");
 const purgecss = require("gulp-purgecss");
 const imagemin = require("gulp-imagemin");
-
-const {series} = require("gulp");
+const sass = require('gulp-sass')(require('sass'));
 
 gulp.task("minify-css", () => {
   return gulp
@@ -39,8 +38,24 @@ gulp.task("minify-image", () => {
 
 // gulp minify-image
 
+
+
+gulp.task('styles', () => {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'));
+});
+
+
+
 gulp.task("default", gulp.series("minify-css", "minify-image"));
 
+/*
 gulp.task("watch", function () {
   gulp.watch("src/", gulp.series("minify-css", "minify-image"));
+});
+*/
+
+gulp.task('watch', () => {
+    gulp.watch('src/sass/**/*.scss', gulp.series("styles"));
 });
