@@ -4,6 +4,7 @@ $table_row_col: #eee;
 $table_bor_col: #eee;
 $container_width: 700px;
 $first_col_width: 150px;
+$primary: yellow;
 
 div.container {
 
@@ -27,4 +28,8 @@ table {
     }
 
     border: 1px solid $table_bor_col;
+}
+
+body{
+    background-color: $primary;
 }
